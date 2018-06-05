@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, TextInput, KeyboardAvoidingView} from 'react-native';
 
+import SearchInput from './components/SearchInput';
+
 export default class App extends React.Component {
   render() {
     return (
@@ -8,13 +10,8 @@ export default class App extends React.Component {
         <Text style={[styles.largeText,styles.textStyle]}>San Francisco</Text>
         <Text style={[styles.smallText,styles.textStyle]}>Light Cloud</Text>
         <Text style={[styles.largeText,styles.textStyle]}>24°</Text>
-          <TextInput autoCorrect={false}
-                     placeholder="Search any City"
-                     placeholderTextColor="white"
-                     style={styles.textInput}
-                     clearButtonMode="always"
-          />
-          </KeyboardAvoidingView>
+        <SearchInput placeholder="Search any city"/>
+     </KeyboardAvoidingView>
     );
   }
 }
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    textInput: {
+    textInput : {
         backgroundColor: '#666',
         color:'white',
         height:40,
