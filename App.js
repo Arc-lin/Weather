@@ -17,15 +17,16 @@ import SearchInput from './components/SearchInput';
 
 export default class App extends React.Component {
 
+    state = {
+        loading : false,
+        error : false,
+        location: '',
+        temperature: 0,
+        weather: '',
+    };
+
     constructor(props) {
         super(props);
-        this.state = {
-            loading : false,
-            error : false,
-            location: '',
-            temperature: 0,
-            weather: '',
-        };
     }
 
     render() {
@@ -125,6 +126,8 @@ const styles = StyleSheet.create({
     },
     smallText: {
         fontSize: 18,
+        marginLeft: 10,
+        marginRight: 10
     },
     container: {
       flex: 1,

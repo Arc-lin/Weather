@@ -1,5 +1,13 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+  	"name": "Weather",
+  	"slug": "weather",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "me.arclin.weather"
+    },
+    "android": {
+      "package": "me.arclin.weather"
+    }
   }
 }

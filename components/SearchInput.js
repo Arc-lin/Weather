@@ -3,14 +3,26 @@
  */
 
 import React from 'react';
+import PropsType from 'prop-types'
 import { StyleSheet, TextInput, View } from 'react-native'
 
 export default class SearchInput extends React.Component {
+
+    state = {
+        text : '',
+    };
+
+    static propTypes = {
+        onSubmit: PropsType.func.isRequired,
+        placeholder: PropsType.string
+    };
+
+    static defaultProps = {
+        placeholder: '',
+    };
+
     constructor(props) {
         super(props);
-        this.state = {
-            text : '',
-        };
     }
     render() {
 
@@ -34,7 +46,7 @@ export default class SearchInput extends React.Component {
     }
 
     handleChangeText = (newLocation) => {
-        console.log(newLocation);
+        //console.log(newLocation);
         this.setState({text : newLocation});
         this.props.location = newLocation;
     }
